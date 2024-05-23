@@ -41,7 +41,7 @@ jobs:
           })
     - uses: hashicorp/setup-terraform@v2
       with:
-        terraform_version: 1.5.0
+        terraform_version: 1.8.0
     - id: 'auth'
       name: 'Authenticate to Google Cloud'
       uses: 'google-github-actions/auth@v1'
@@ -71,7 +71,7 @@ jobs:
       run: terraform validate -no-color -compact-warnings | grep -v '^`'
 
     - name: Checkov GitHub Action
-      uses: bridgecrewio/checkov-action@v12
+      uses: bridgecrewio/checkov-action@v12.2742.0
       with:
          # This will add both a CLI output to the console and create a results.sarif file
         output_format: cli,sarif

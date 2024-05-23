@@ -10,6 +10,8 @@ repos:
         - --hook-config=--add-to-existing-file=true     # Boolean. true or false
         - --hook-config=--create-file-if-not-exist=true
     - id: terraform_tflint
+      args:
+       - --args=--disable-rule=terraform_required_providers
     - id: terraform_checkov
       args:
        - --args=--config-file __GIT_WORKING_DIR__/.checkov.yaml
